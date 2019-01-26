@@ -5,14 +5,28 @@ using UnityEngine;
 public class Breaker : MonoBehaviour {
     public GameObject manager;
     public Sprite onSprite;
+    public GameObject closedAndOn;
 
     private bool isEnabled = true;
+    private bool hasBeenFlipped;
+    
     public void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0) && isEnabled)
         {
-            manager.SendMessage("turnPowerOn");
-            gameObject.GetComponent<SpriteRenderer>().sprite = onSprite;
+            if (hasBeenFlipped)
+            {
+                Debug.Log("here");
+                manager.SendMessage("removeInteractible", gameObject);
+                Instantiate(closedAndOn);
+                Destroy(gameObject);
+            }
+            else
+            {
+                manager.SendMessage("turnPowerOn");
+                gameObject.GetComponent<SpriteRenderer>().sprite = onSprite;
+                hasBeenFlipped = true;
+            }
         }
     }
 

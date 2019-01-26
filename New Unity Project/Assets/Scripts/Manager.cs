@@ -16,6 +16,7 @@ public class Manager : MonoBehaviour {
     public GameObject GpsCover;
     public GameObject gpsCircutBoard;
     public GameObject triangulationSystem;
+    public GameObject commsTerminal;
 
     private List<GameObject> allInteractibles= new List<GameObject>();
 
@@ -28,7 +29,19 @@ public class Manager : MonoBehaviour {
     public GameObject EnableAiButton;
     public GameObject EnableScrubbersButton;
     public GameObject StartGpsButton;
+    public GameObject DroneControlButton;
+    public GameObject SendSosButton;
 
+    [Header("Status Lights")]
+    public GameObject powerStatus;
+    public GameObject gpsStatus;
+    public GameObject aiStatus;
+    public GameObject incommingStatus;
+    public GameObject outgoingStatus;
+    public GameObject droneStatus;
+    public GameObject hullStatus;
+    public GameObject scrubberStatus;
+    
     //condition variables
     private bool powerOn = false;
     private bool hasTools = false;
@@ -39,6 +52,8 @@ public class Manager : MonoBehaviour {
     private bool gpsFixed = false;
     private bool hasReferenceData = false;
     private bool postionFound = false;
+    private bool fixedComms = false;
+    private bool droneOut = false;
 
     public void Start()
     {
@@ -48,6 +63,7 @@ public class Manager : MonoBehaviour {
         allInteractibles.Add(PowerPanelCover);
         allInteractibles.Add(ControlTerminal);
         allInteractibles.Add(GpsCover);
+        allInteractibles.Add(commsTerminal);
     }
 
     public void addInteractible(GameObject newInteractible)
@@ -102,6 +118,8 @@ public class Manager : MonoBehaviour {
     {
         powerOn = true;
         triangulationSystem.SendMessage("activate");
+        powerStatus.SendMessage("toggle");
+        incommingStatus.SendMessage("toggle");
     }
     public void canRepairDrone()
     {
@@ -114,6 +132,7 @@ public class Manager : MonoBehaviour {
     public void droneRepaired()
     {
         droneFixed = true;
+        droneStatus.SendMessage("toggle");
     }
     public void canLogIn()
     {
@@ -138,21 +157,24 @@ public class Manager : MonoBehaviour {
     {
         aiEnabled = true;
         EnableAiButton.SendMessage("success");
+        aiStatus.SendMessage("toggle");
     }
     public void enableScrubbers()
     {
         scrubbersEnabled = true;
         EnableScrubbersButton.SendMessage("success");
+        scrubberStatus.SendMessage("toggle");
     }
     public void gpsRepaired()
     {
         gpsFixed = true;
+        gpsStatus.SendMessage("toggle");
     }
     public void getGpsState()
     {
         if (!gpsFixed)
         {
-            StartGpsButton.SendMessage("setGpsState", 0);
+            StartGpsButton.SendMessage("setGpsState", 0, SendMessageOptions.RequireReceiver);
         }
         else if (!hasReferenceData)
         {
@@ -170,5 +192,62 @@ public class Manager : MonoBehaviour {
     public void locationFound()
     {
         postionFound = true;
+    }
+    public void requestDroneStatus()
+    {
+        if (!droneFixed)
+        {
+            DroneControlButton.SendMessage("setDroneStatus", 0, SendMessageOptions.RequireReceiver);
+        }
+        else if (!droneOut)
+        {
+            DroneControlButton.SendMessage("setDroneStatus", 1);
+        }
+        else
+        {
+            DroneControlButton.SendMessage("setDroneStatus", 2);
+        }
+    }
+    public void sendDrone()
+    {
+        StartCoroutine(sendDroneHelper());
+    }
+    public void sendSos()
+    {
+        if (fixedComms && postionFound)
+        {
+            Debug.Log("You Win");
+        }
+        else
+        {
+            SendSosButton.SendMessage("failure");
+        }
+    }
+    public void canAccessComs()
+    {
+        if (powerOn)
+        {
+            commsTerminal.SendMessage("canAccessComs", true);
+        }
+        else
+        {
+            commsTerminal.SendMessage("canAccessComs", false);
+        }
+    }
+    private IEnumerator sendDroneHelper()
+    {
+        droneOut = true;
+        yield return new WaitForSeconds(5);
+        droneOut = false;
+        fixedComms = true;
+        hullStatus.SendMessage("toggle");
+    }
+
+    public void FixedUpdate()
+    {
+        if(fixedComms && postionFound)
+        {
+            outgoingStatus.SendMessage("toggle");
+        }
     }
 }

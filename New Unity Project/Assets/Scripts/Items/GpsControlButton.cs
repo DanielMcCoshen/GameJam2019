@@ -34,11 +34,15 @@ public class GpsControlButton : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (gpsState == 1) //missing reference data
+            if (gpsState == 0)
+            { //still broken. maybe a voice line?
+
+            }
+            else if (gpsState == 1) //missing reference data
             {
                 referenceSystem.SendMessage("record");
             }
-            if (gpsState == 2)
+            else if (gpsState == 2)
             { // ready to get data
                 manager.SendMessage("locationFound");
             }
