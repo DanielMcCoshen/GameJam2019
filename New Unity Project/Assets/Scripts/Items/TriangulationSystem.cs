@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class TriangulationSystem : MonoBehaviour {
 
-    private const float DELTA = 2;
+    private const float DELTA = 5;
 
     public GameObject stars;
     public GameObject manager;
 
     private bool recording = false;
 
-    private Vector2 target1 = new Vector2(-70, 15);
-    private Vector2 target2 = new Vector2(-70, 0);
-    private Vector2 target3 = new Vector2(-70, -15);
+    private Vector2 target1 = new Vector2(-85, -83);
+    private Vector2 target2 = new Vector2(-244, -121);
+    private Vector2 target3 = new Vector2(-152, -44);
 
     private bool found1 = false;
     private bool found2 = false;
@@ -25,18 +25,30 @@ public class TriangulationSystem : MonoBehaviour {
     {
         if (recording)
         {
-            if (Mathf.Abs(stars.transform.position.x - target1.x) < DELTA  && 
-                Mathf.Abs(stars.transform.position.y - target1.y) < DELTA){
+            if (Mathf.Abs(stars.transform.position.x % 300 - target1.x) < DELTA  && 
+                Mathf.Abs(stars.transform.position.y % 300 - target1.y) < DELTA){
+                if (!found1)
+                {
+
+                }
                 found1 = true;
             }
-            if (Mathf.Abs(stars.transform.position.x - target2.x) < DELTA &&
-               Mathf.Abs(stars.transform.position.y - target2.y) < DELTA)
+            if (Mathf.Abs(stars.transform.position.x % 300 - target2.x) < DELTA &&
+               Mathf.Abs(stars.transform.position.y % 300 - target2.y) < DELTA)
             {
+                if (!found2)
+                {
+
+                }
                 found2 = true;
             }
-            if (Mathf.Abs(stars.transform.position.x - target3.x) < DELTA &&
-               Mathf.Abs(stars.transform.position.y - target3.y) < DELTA)
+            if (Mathf.Abs(stars.transform.position.x % 300- target3.x) < DELTA &&
+               Mathf.Abs(stars.transform.position.y % 300- target3.y) < DELTA)
             {
+                if (!found3)
+                {
+
+                }
                 found3 = true;
             }
             if (found1 && found2 && found3)
@@ -56,6 +68,7 @@ public class TriangulationSystem : MonoBehaviour {
 	private void record()
     {
         recording = true;
+        stars.SendMessage("on");
     }
 
     private void activate()
