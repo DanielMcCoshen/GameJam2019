@@ -92,7 +92,7 @@ public class VoiceManager : MonoBehaviour {
 
     public void receiverSequence()
     {
-        StartCoroutine(receiverSequenceHelper);
+        StartCoroutine(receiverSequenceHelper());
     }
     private IEnumerator receiverSequenceHelper()
     { 
