@@ -72,6 +72,11 @@ MonoBehaviour:
   IsSource: 0
   IsTarget: 0
   IsSelected: 0
+  Neighbors: []
+  Minigame: {fileID: 0}
+  Coordinate:
+    X: 0
+    Y: 0
 --- !u!212 &212401663319944030
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -104,7 +109,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 155edf3dc222aeb4f8120b1c9cf19330, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c0a38e2992590440b03b3a910b880c7, type: 3}
   m_Color: {r: 0.9632353, g: 0.3753785, b: 0.3753785, a: 1}
   m_FlipX: 0
   m_FlipY: 0

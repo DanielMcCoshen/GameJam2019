@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VoiceManager : MonoBehaviour {
 
@@ -19,10 +20,15 @@ public class VoiceManager : MonoBehaviour {
     public AudioClip tannerMadeItOff;
     public AudioClip tannerMomResponse;
     public AudioClip tannerStopPlayback;
+    public AudioClip tannerCarbonDIEoxide;
+    public AudioClip tannerSomebodyHelp;
 
     [Header("Lisa")]
     public AudioClip iDid;
     public AudioClip theOdds;
+    public AudioClip solderingIron;
+    public AudioClip lisaOnBoard;
+    public AudioClip lisaRepairTransmitter;
 
     [Header("Saros")]
     public AudioClip sarosTransmission;
@@ -33,12 +39,17 @@ public class VoiceManager : MonoBehaviour {
     public AudioClip arnoldEverythingGoingToBeOk;
 
 
+    [Header("generic")]
+    public AudioClip co2Dangerous;
+
+
     private bool scene = false;
 
     private AudioSource src;
     void Start()
     {
         src = gameObject.GetComponent<AudioSource>();
+        firstSequence();
     }
 
     public void co2Sequence()
@@ -55,6 +66,7 @@ public class VoiceManager : MonoBehaviour {
         src.clip = iDid;
         src.Play();
         yield return new WaitWhile(() => src.isPlaying);
+        yield return new WaitForSeconds(1);
         src.clip = friendlyVoice;
         src.Play();
         yield return new WaitWhile(() => src.isPlaying);
@@ -64,6 +76,9 @@ public class VoiceManager : MonoBehaviour {
         src.clip = stickingAround;
         src.Play();
         yield return new WaitWhile(() => src.isPlaying);
+        yield return new WaitForSeconds(10);
+        src.clip = lisaOnBoard;
+        src.Play();
         scene = false;
     }
 
@@ -79,14 +94,25 @@ public class VoiceManager : MonoBehaviour {
         src.Play();
         yield return new WaitWhile(() => src.isPlaying);
         src.clip = tannerHelloAnyone;
-
-        /*IF TANNER HITS THE TRANSMITTER BUTTON
-         maybe idk*/
-
         yield return new WaitWhile(() => src.isPlaying);
-        src.clip = tannerMadeItOff;
+        src.clip = tannerBeginningExposition;
         src.Play();
+        yield return new WaitWhile(() => src.isPlaying);
+
         scene = false;
+    }
+
+    public void repairTransmitter()
+    {
+        src.clip = lisaRepairTransmitter;
+        src.Play();
+    }
+
+    public void noToolsSequence()
+    {
+        src.clip = solderingIron;
+        src.Play();
+        //scene = false;
     }
 
 
@@ -112,7 +138,34 @@ public class VoiceManager : MonoBehaviour {
         src.Play();
         yield return new WaitWhile(() => src.isPlaying);
         src.clip = tannerStopPlayback;
+        scene = false;
     }
 
+    public void powerOnSequence()
+    {
+        StartCoroutine(powerOnSequenceHelper());
+    }
+    private IEnumerator powerOnSequenceHelper()
+    {
+        yield return new WaitWhile(() => scene);
+        scene = true;
+        src.clip = co2Dangerous;
+        src.Play();
+        yield return new WaitWhile(() => src.isPlaying);
+        src.clip = tannerCarbonDIEoxide;
+        src.Play();
+        scene = false;
+    }
 
+    public void aGoodbye()
+    {
+        StartCoroutine(finalVoicesHelper());
+    }
+    private IEnumerator finalVoicesHelper()
+    {
+        yield return new WaitWhile(() => scene);
+        src.clip = tannerSomebodyHelp;
+        src.Play();
+        SceneManager.LoadScene("Credits");
+    }
 }

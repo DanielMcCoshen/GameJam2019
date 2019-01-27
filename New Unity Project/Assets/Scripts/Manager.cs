@@ -126,9 +126,10 @@ public class Manager : MonoBehaviour {
         triangulationSystem.SendMessage("activate");
         powerStatus.SendMessage("toggle");
         incommingStatus.SendMessage("toggle");
-        Invoke("enableAi", 5);
+        Invoke("enableAi", 15);
         adminMonitorVisuals.SetActive(true);
         commMonitorVisuals.SetActive(true);
+        voices.SendMessage("powerOnSequence");
     }
     public void canRepairDrone()
     {
@@ -228,10 +229,11 @@ public class Manager : MonoBehaviour {
     {
         if (fixedComms && postionFound)
         {
-            Debug.Log("You Win");
+            voices.SendMessage("aGoodbye");
         }
         else
         {
+            voices.SendMessage("repairTransmitter");
             SendSosButton.SendMessage("failure");
         }
     }
@@ -264,6 +266,13 @@ public class Manager : MonoBehaviour {
         {
             outgoingStatus.SendMessage("toggle");
             gameObject.SendMessage("advanceMain");
+        }
+    }
+    public void noToolsSequence()
+    {
+        if (aiEnabled)
+        {
+            voices.SendMessage("noToolsSequence");
         }
     }
 }

@@ -39,14 +39,12 @@ public class GpsCircutBoard : MonoBehaviour
         }
         else
         {
-            Debug.Log(gameObject.name);
-            Debug.Log("This can not be fixed without tools");
+            manager.SendMessage("noToolsSequence");
         }
     }
 
     public void success()
     {
-        Debug.Log("got hre");
         isRepaired = true;
         manager.SendMessage("gpsRepaired");
         Instantiate(fixedCover);

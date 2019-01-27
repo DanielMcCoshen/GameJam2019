@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1292287619689348}
-  withReticle: {fileID: 0}
+  withReticle: {fileID: 21300000, guid: 7845ef32f2de7eb4da0ab6848bf5a29f, type: 3}
   left: {fileID: 0}
   right: {fileID: 0}
   up: {fileID: 0}
@@ -96,7 +96,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 300.85, y: 300.85}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

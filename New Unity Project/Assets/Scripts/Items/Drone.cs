@@ -9,6 +9,8 @@ public class Drone : MonoBehaviour {
     private bool isRepaired = false;
     private bool isEnabled = true;
 
+    public GameObject voice;
+
     public void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0) && isEnabled)
@@ -36,7 +38,7 @@ public class Drone : MonoBehaviour {
         }
         else
         {
-            Debug.Log("This can not be fixed without tools");
+            manager.SendMessage("noToolsSequence");
         }
     }
 

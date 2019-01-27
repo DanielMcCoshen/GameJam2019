@@ -832,11 +832,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a525dc8a46a174fbb406d8d8696727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  co2Begone: {fileID: 0}
-  friendlyVoice: {fileID: 0}
-  stickingAround: {fileID: 0}
-  iDid: {fileID: 0}
-  theOdds: {fileID: 0}
+  co2Begone: {fileID: 8300000, guid: 5ea9795738745ed4984633ed34e262a6, type: 3}
+  friendlyVoice: {fileID: 8300000, guid: a58ecd739f9ca2042bd2376f7685a084, type: 3}
+  stickingAround: {fileID: 8300000, guid: 325cb69387d8b8d4aa7a4ad86308f207, type: 3}
+  tannerBreathingStartOfGame: {fileID: 8300000, guid: 5118505b99bba39488203d8022988d6e,
+    type: 3}
+  tannerHelloAnyone: {fileID: 8300000, guid: 95ad6d2bdb29c1745b12477d8553d298, type: 3}
+  tannerHelloRequestingAid: {fileID: 8300000, guid: 6ca91e5993fab994aa9bc22cb47d6cea,
+    type: 3}
+  tannerBeginningExposition: {fileID: 8300000, guid: 8551d09055bb2e7449f11171135e4ebc,
+    type: 3}
+  tannerLightHeaded: {fileID: 8300000, guid: a68a3fc91cbb6524fb024e220894635a, type: 3}
+  tannerMadeItOff: {fileID: 8300000, guid: f128553d6ce05e944bdea874243acd47, type: 3}
+  tannerMomResponse: {fileID: 8300000, guid: c95da1fb007caaf4682d6046060d31d8, type: 3}
+  tannerStopPlayback: {fileID: 8300000, guid: d2ee6f4302ee4cd49ae24f21564d6296, type: 3}
+  tannerCarbonDIEoxide: {fileID: 8300000, guid: 86ad5e36128e40f468b223029f7ba546,
+    type: 3}
+  tannerSomebodyHelp: {fileID: 0}
+  iDid: {fileID: 8300000, guid: cfdee3d1c54b50e41a0fc364085a3f3d, type: 3}
+  theOdds: {fileID: 8300000, guid: 23522d28ac6d4a748a17e58ff09b108c, type: 3}
+  solderingIron: {fileID: 8300000, guid: 785db0a2777d2594eb32efd1fdc1234c, type: 3}
+  lisaOnBoard: {fileID: 8300000, guid: 0576f9489e62d8a4b8bddbc2343931d3, type: 3}
+  lisaRepairTransmitter: {fileID: 8300000, guid: 757000624e9643f44a11636783439566,
+    type: 3}
+  sarosTransmission: {fileID: 8300000, guid: aa003c302e2e80044872a98f3d4b02cb, type: 3}
+  karenTransmission: {fileID: 8300000, guid: e55e98626395a354b8b50624668951fb, type: 3}
+  arnoldSonOutThere: {fileID: 8300000, guid: 3fcbee095bfba114f9c26a017769f88d, type: 3}
+  arnoldEverythingGoingToBeOk: {fileID: 8300000, guid: ee0ec4632b5c3e646a2afdd32a58d6ee,
+    type: 3}
+  co2Dangerous: {fileID: 8300000, guid: e5d18b17edce2a84ebd92dff25e30a6d, type: 3}
 --- !u!1 &197675297
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,7 +1418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starfeild: {fileID: 1109420080}
-  direction: {x: 0, y: 2}
+  direction: {x: 0, y: 4}
   joystick: {fileID: 1664964339}
   pos: {fileID: 21300000, guid: 5a6fd20ff2278a64f9aadada7581bb1c, type: 3}
 --- !u!1 &515569207
@@ -2472,6 +2496,7 @@ MonoBehaviour:
   manager: {fileID: 1876585840}
   circutBoard: {fileID: 1816456595609256, guid: 70ecb58d0fcc5184484226608b720e6c,
     type: 2}
+  voice: {fileID: 0}
 --- !u!1 &881049631
 GameObject:
   m_ObjectHideFlags: 0
@@ -2954,7 +2979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starfeild: {fileID: 1109420080}
-  direction: {x: -2, y: 0}
+  direction: {x: -4, y: 0}
   joystick: {fileID: 1664964339}
   pos: {fileID: 21300000, guid: 187ab7d503e4622499d239ab0c5a8bea, type: 3}
 --- !u!1 &1109420080
@@ -3603,7 +3628,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 20.4
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3674,7 +3699,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1645841542}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.8, y: -9.9, z: -0.1}
+  m_LocalPosition: {x: 18.84, y: -12.63, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1948487042}
@@ -3706,18 +3731,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.000015258789, y: 0.05016899}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 9.74, y: 12.89}
+    oldSize: {x: 9.73, y: 7.71}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.793545, y: 13.105141}
+  m_Size: {x: 9.73, y: 7.71}
   m_EdgeRadius: 0
 --- !u!212 &1645841546
 SpriteRenderer:
@@ -3751,7 +3776,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1480c9a19fb407842aa037d62ff1058f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8d39746d7716c804b88cf23d84c30abf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4256,6 +4281,7 @@ GameObject:
   - component: {fileID: 1876585842}
   - component: {fileID: 1876585844}
   - component: {fileID: 1876585843}
+  - component: {fileID: 1876585845}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -4411,6 +4437,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1876585845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1876585840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 076cec84d1829394390dfe37bd006114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startprefab: {fileID: 1292287619689348, guid: 487476cc4d1993743aaff0506e6b33b1,
+    type: 2}
+  startstate: {fileID: 21300000, guid: b013d559a88c3864a8904e1ef29bcca3, type: 3}
 --- !u!1 &1948487040
 GameObject:
   m_ObjectHideFlags: 0
@@ -4459,7 +4499,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0c4612202abe45e4396319f22750dd12, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cea213a3e73fc9646966eb784975d931, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4476,7 +4516,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1948487040}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 584097890}
@@ -4670,7 +4710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starfeild: {fileID: 1109420080}
-  direction: {x: 2, y: 0}
+  direction: {x: 4, y: 0}
   joystick: {fileID: 1664964339}
   pos: {fileID: 21300000, guid: adabb525408ffcf489762c1df040f3b9, type: 3}
 --- !u!1 &2047292239
@@ -4746,7 +4786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starfeild: {fileID: 1109420080}
-  direction: {x: 0, y: -2}
+  direction: {x: 0, y: -4}
   joystick: {fileID: 1664964339}
   pos: {fileID: 21300000, guid: ddce2abe722c421458d0bfe957e6f043, type: 3}
 --- !u!1001 &2095037689
@@ -4799,6 +4839,12 @@ Prefab:
       value: 
       objectReference: {fileID: 1292287619689348, guid: 487476cc4d1993743aaff0506e6b33b1,
         type: 2}
+    - target: {fileID: 114026979346267146, guid: 487476cc4d1993743aaff0506e6b33b1,
+        type: 2}
+      propertyPath: withReticle
+      value: 
+      objectReference: {fileID: 21300000, guid: 7845ef32f2de7eb4da0ab6848bf5a29f,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487476cc4d1993743aaff0506e6b33b1, type: 2}
   m_IsPrefabParent: 0
