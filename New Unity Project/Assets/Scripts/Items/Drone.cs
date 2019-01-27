@@ -31,8 +31,8 @@ public class Drone : MonoBehaviour {
             GameObject circutInstance = Instantiate(circutBoard,
                Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 1)), Quaternion.identity);
             //CHANGE THIS WHEN MINIAME IS MADE
-            circutInstance.GetComponent<KeyPadDetail>().manager = manager;
-            circutInstance.GetComponent<KeyPadDetail>().keyPad = gameObject;
+            circutInstance.GetComponent<MinigameInstance>().GameManager = manager;
+            circutInstance.GetComponent<MinigameInstance>().Caller = gameObject;
         }
         else
         {

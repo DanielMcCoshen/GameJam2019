@@ -16,6 +16,7 @@ public class KeyPadDetail : MonoBehaviour {
     
     void keyTyped(char key)
     {
+        gameObject.GetComponent<Animator>().SetTrigger(""+key);
         attempt += key;
         if (attempt == "8372")
         {
