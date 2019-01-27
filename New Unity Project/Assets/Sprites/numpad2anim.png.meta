@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 guid: 8202e3fbd3abaa44ba2ab54b98c270a0
-timeCreated: 1548548860
+timeCreated: 1548550118
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: numpad2anim_0
+    21300002: numpad2anim_1
+    21300004: numpad2anim_2
+    21300006: numpad2anim_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -121,7 +125,63 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: numpad2anim_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 291
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: numpad2anim_1
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 0
+        width: 291
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: numpad2anim_2
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 0
+        width: 291
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: numpad2anim_3
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 0
+        width: 291
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 

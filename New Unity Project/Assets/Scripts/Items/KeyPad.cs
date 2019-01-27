@@ -7,6 +7,7 @@ public class KeyPad : MonoBehaviour {
     public GameObject manager;
     public GameObject interactableKeyPad;
     public GameObject toolChest;
+    public GameObject openDoor;
 
     private bool isEnabled = true;
 
@@ -15,7 +16,7 @@ public class KeyPad : MonoBehaviour {
         if (Input.GetMouseButtonDown(0) && isEnabled)
         {
            GameObject padInstance = Instantiate(interactableKeyPad, 
-               Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 1)), Quaternion.identity);
+               Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 1)) - new Vector3(0,5,0), Quaternion.identity);
             padInstance.GetComponent<KeyPadDetail>().manager = manager;
             padInstance.GetComponent<KeyPadDetail>().keyPad = gameObject;
 
@@ -28,6 +29,7 @@ public class KeyPad : MonoBehaviour {
         tools.GetComponent<Toolbox>().manager = manager;
         manager.SendMessage("addInteractible", tools);
         manager.SendMessage("removeInteractible", gameObject);
+        Instantiate(openDoor);
         Destroy(gameObject);
     }
 

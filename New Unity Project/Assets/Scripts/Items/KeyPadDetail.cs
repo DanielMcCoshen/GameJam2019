@@ -18,6 +18,15 @@ public class KeyPadDetail : MonoBehaviour {
     {
         gameObject.GetComponent<Animator>().SetTrigger(""+key);
         attempt += key;
+        text.GetComponent<TextMesh>().text = attempt;
+        if (attempt.Length >= 4)
+        {
+            Invoke("checkAttempt", 2);
+        }
+    }
+
+    void checkAttempt()
+    {
         if (attempt == "8372")
         {
             Debug.Log(keyPad);
@@ -25,12 +34,13 @@ public class KeyPadDetail : MonoBehaviour {
             manager.SendMessage("unDimScreen");
             Destroy(gameObject);
         }
-        if (attempt.Length == 4)
+        if (attempt.Length >= 4)
         {
             attempt = "";
+            text.GetComponent<TextMesh>().text = attempt;
         }
-        text.GetComponent<TextMesh>().text = attempt;
     }
+        
 	
     public void exit()
     {

@@ -133,6 +133,7 @@ public class Manager : MonoBehaviour {
     {
         droneFixed = true;
         droneStatus.SendMessage("toggle");
+        gameObject.SendMessage("advanceMain");
     }
     public void canLogIn()
     {
@@ -164,6 +165,7 @@ public class Manager : MonoBehaviour {
         scrubbersEnabled = true;
         EnableScrubbersButton.SendMessage("success");
         scrubberStatus.SendMessage("toggle");
+        gameObject.SendMessage("advanceMain");
     }
     public void gpsRepaired()
     {
@@ -248,6 +250,7 @@ public class Manager : MonoBehaviour {
         if(fixedComms && postionFound)
         {
             outgoingStatus.SendMessage("toggle");
+            gameObject.SendMessage("advanceMain");
         }
     }
 }
