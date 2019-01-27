@@ -15,6 +15,6 @@ public class SosButton : MonoBehaviour
 
     public void failure()
     {
-        //voice lines go here
+        gameObject.GetComponent<TextMesh>().text = "Send SOS Signal\nError: Sos broadcasting\nnot available";
     }
 }

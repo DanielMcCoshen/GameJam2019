@@ -20,9 +20,15 @@ public class DroneControls : MonoBehaviour
         //set sprites here
         switch (status)
         {
-            case 0: break;
-            case 1: break;
-            case 2: break;
+            case 0:
+                gameObject.GetComponent<TextMesh>().text = "Repair Drone Control:\nError: Drone Unreachable. Maybe its offline?";
+                break;
+            case 1:
+                gameObject.GetComponent<TextMesh>().text = "Repair Drone Control:\nOnline. Click to initiate repairs.";
+                break;
+            case 2:
+                gameObject.GetComponent<TextMesh>().text = "Repair Drone Control:\nRepair in progress. Please wait.";
+                break;
         }
     }
 

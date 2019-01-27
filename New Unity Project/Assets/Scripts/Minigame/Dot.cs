@@ -29,7 +29,7 @@ public class Dot : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) // Left Click
         {
-            if (CanSelect && !(IsSource || IsSelected))
+            if (CanSelect)
             {
                 Minigame.DotMarked(this);
                 IsSelected = true;
@@ -45,7 +45,7 @@ public class Dot : MonoBehaviour
             {
                 if (neighbor.IsSource || neighbor.IsSelected)
                 {
-                    return true;
+                    return !(IsSource || IsSelected);
                 }
             }
 

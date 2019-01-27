@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
-  circutBoard: {fileID: 1132077876371574, guid: 9f338f4215ae5b547ac6c9cbd7a34ac2,
+  circutBoard: {fileID: 1536908123343148, guid: 10e43c81659d0ce409238d22f69d8bbb,
     type: 2}
   fixedCover: {fileID: 1379174081556562, guid: 01e2cbbe545c3b543a62d93e68e40a4b, type: 2}
 --- !u!212 &212992214115851826

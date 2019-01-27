@@ -7,15 +7,14 @@ public class AdminTerminalMainScreen : MonoBehaviour {
     public GameObject manager;
 
     public GameObject scruberButton;
-    public GameObject aiButton;
+    //public GameObject aiButton;
     public GameObject droneButton;
     public GameObject gpsButton;
     public GameObject schematicsButton;
     public GameObject exitButton;
+    public GameObject circutDiagrams;
 
     private bool inSchematicsMode = false;
-    public Sprite mainSprite;
-    public Sprite schematicsSprite;
 
     private SpriteRenderer sr;
 	// Use this for initialization
@@ -31,24 +30,24 @@ public class AdminTerminalMainScreen : MonoBehaviour {
     public void showSchematics()
     {
         inSchematicsMode = true;
-        sr.sprite = schematicsSprite;
-        aiButton.SetActive(false);
+        //aiButton.SetActive(false);
         droneButton.SetActive(false);
         gpsButton.SetActive(false);
         schematicsButton.SetActive(false);
         scruberButton.SetActive(false);
+        circutDiagrams.SetActive(true);
     }
 	public void exit()
     {
         if (inSchematicsMode)
         {
             inSchematicsMode = false;
-            sr.sprite = mainSprite;
-            aiButton.SetActive(true);
+            //aiButton.SetActive(true);
             droneButton.SetActive(true);
             gpsButton.SetActive(true);
             schematicsButton.SetActive(true);
             scruberButton.SetActive(true);
+            circutDiagrams.SetActive(false);
         }
         else
         {

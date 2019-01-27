@@ -41,7 +41,13 @@ public class Manager : MonoBehaviour {
     public GameObject droneStatus;
     public GameObject hullStatus;
     public GameObject scrubberStatus;
-    
+
+    [Header("Ambiance Elements")]
+    public GameObject adminMonitorVisuals;
+    public GameObject commMonitorVisuals;
+
+    public GameObject voices;
+
     //condition variables
     private bool powerOn = false;
     private bool hasTools = false;
@@ -120,6 +126,9 @@ public class Manager : MonoBehaviour {
         triangulationSystem.SendMessage("activate");
         powerStatus.SendMessage("toggle");
         incommingStatus.SendMessage("toggle");
+        Invoke("enableAi", 5);
+        adminMonitorVisuals.SetActive(true);
+        commMonitorVisuals.SetActive(true);
     }
     public void canRepairDrone()
     {
@@ -157,7 +166,7 @@ public class Manager : MonoBehaviour {
     public void enableAi()
     {
         aiEnabled = true;
-        EnableAiButton.SendMessage("success");
+        //EnableAiButton.SendMessage("success");
         aiStatus.SendMessage("toggle");
     }
     public void enableScrubbers()
@@ -166,6 +175,7 @@ public class Manager : MonoBehaviour {
         EnableScrubbersButton.SendMessage("success");
         scrubberStatus.SendMessage("toggle");
         gameObject.SendMessage("advanceMain");
+        voices.SendMessage("co2Sequence");
     }
     public void gpsRepaired()
     {
@@ -239,11 +249,14 @@ public class Manager : MonoBehaviour {
     private IEnumerator sendDroneHelper()
     {
         droneOut = true;
-        yield return new WaitForSeconds(5);
+        Drone.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(60);
         droneOut = false;
         fixedComms = true;
+        Drone.GetComponent<SpriteRenderer>().enabled = true;
         hullStatus.SendMessage("toggle");
     }
+
 
     public void FixedUpdate()
     {

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnableScrubbersButton : MonoBehaviour {
     public GameObject manager;
-    public Sprite aiEnabledSprite;
 
     public void OnMouseOver()
     {
@@ -16,7 +15,7 @@ public class EnableScrubbersButton : MonoBehaviour {
 
     public void success()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = aiEnabledSprite;
+        gameObject.GetComponent<TextMesh>().text = "Co2 Scrubber Control: \n Scrubbers [enabled]";
     }
 
 }

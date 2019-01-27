@@ -6,12 +6,16 @@ public class MoveStars : MonoBehaviour {
 
     public GameObject starfeild;
     public Vector2 direction;
+    public GameObject joystick;
+    public Sprite pos;
 
     private bool active = false;
     public void OnMouseOver()
     {
+        Debug.Log("here");
         if (Input.GetMouseButton(0) && active )
         {
+            joystick.GetComponent<SpriteRenderer>().sprite = pos;
             StartCoroutine(MoveToPosition(starfeild.transform, new Vector3(starfeild.transform.position.x + direction.x,
                 starfeild.transform.position.y + direction.y, starfeild.transform.position.z), 0.25f));
         }

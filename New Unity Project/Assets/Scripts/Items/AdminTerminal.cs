@@ -28,8 +28,8 @@ public class AdminTerminal : MonoBehaviour {
         GameObject loginInstance = Instantiate(loginScreen,
               Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 1)), Quaternion.identity);
         //change this type when the login prompt gets made
-        loginInstance.GetComponent<KeyPadDetail>().manager = manager;
-        loginInstance.GetComponent<KeyPadDetail>().keyPad = gameObject;
+        loginInstance.GetComponent<LoginScreen>().manager = manager;
+        loginInstance.GetComponent<LoginScreen>().caller = gameObject;
     }
 
     public void loggedIn()

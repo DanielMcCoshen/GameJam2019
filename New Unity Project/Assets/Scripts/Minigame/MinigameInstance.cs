@@ -33,9 +33,11 @@ public class MinigameInstance : MonoBehaviour
         {
             for (var x = 0; x < 5; x++)
             {
+                var p = GetPosition(x, y);
+
                 // Create dot instance
-                var dotGo = Instantiate(DotPrefab, transform);
-                dotGo.transform.position = GetPosition(x, y);
+                var dotGo = Instantiate(DotPrefab, transform, false);
+                dotGo.transform.localPosition = new Vector3(p.x, p.y, 0);
                 dotGo.name = String.Format("dot {0}, {1}", x, y);
 
                 // Configure dot
@@ -80,7 +82,7 @@ public class MinigameInstance : MonoBehaviour
     {
         _chain.Add(dot);
         UpdateWire();
-
+         
         // Target clicked, check solution
         if (dot.IsTarget)
         {
