@@ -22,6 +22,11 @@ public class VoiceManager : MonoBehaviour {
     public AudioClip tannerStopPlayback;
     public AudioClip tannerCarbonDIEoxide;
     public AudioClip tannerSomebodyHelp;
+    public AudioClip tannerBrotherResponse;
+    public AudioClip tannerSam;
+    public AudioClip tannerTransmiting;
+    public AudioClip tannerGoodEnding;
+    public AudioClip tannerBrotherTransmission;
 
     [Header("Lisa")]
     public AudioClip iDid;
@@ -29,11 +34,19 @@ public class VoiceManager : MonoBehaviour {
     public AudioClip solderingIron;
     public AudioClip lisaOnBoard;
     public AudioClip lisaRepairTransmitter;
+    public AudioClip lisaStopping;
+    public AudioClip lisaCantDoThat;
 
     [Header("Saros")]
     public AudioClip sarosTransmission;
+    public AudioClip sarosCanYouHearMe;
+    public AudioClip sarosMom;
+
     [Header("Karen")]
     public AudioClip karenTransmission;
+    public AudioClip karenTanner;
+    public AudioClip karenGetToYou;
+
     [Header("Arnold")]
     public AudioClip arnoldSonOutThere;
     public AudioClip arnoldEverythingGoingToBeOk;
@@ -41,7 +54,7 @@ public class VoiceManager : MonoBehaviour {
 
     [Header("generic")]
     public AudioClip co2Dangerous;
-
+    public AudioClip samLastLine;
 
     private bool scene = false;
 
@@ -127,17 +140,34 @@ public class VoiceManager : MonoBehaviour {
         src.clip = karenTransmission;
         src.Play();
         yield return new WaitWhile(() => src.isPlaying);
+        yield return new WaitForSeconds(1);
         src.clip = tannerMomResponse;
         src.Play();
         yield return new WaitWhile(() => src.isPlaying);
+        yield return new WaitForSeconds(10);
         src.clip = sarosTransmission;
         src.Play();
-        //TODO: Mix these two somehow;
         yield return new WaitWhile(() => src.isPlaying);
+        src.clip = tannerBrotherResponse;
+        src.Play();
+        yield return new WaitWhile(() => src.isPlaying);
+        yield return new WaitForSeconds(10);
         src.clip = arnoldSonOutThere;
         src.Play();
         yield return new WaitWhile(() => src.isPlaying);
-        src.clip = tannerStopPlayback;
+        src.clip = lisaStopping;
+        src.Play();
+        yield return new WaitWhile(() => src.isPlaying);
+        yield return new WaitForSeconds(10);
+        src.clip = samLastLine;
+        src.Play();
+        yield return new WaitWhile(() => src.isPlaying);
+        src.clip = tannerSam;
+        src.Play();
+        yield return new WaitWhile(() => src.isPlaying);
+        src.clip = lisaCantDoThat;
+        src.Play();
+        yield return new WaitWhile(() => src.isPlaying);
         scene = false;
     }
 
@@ -166,6 +196,31 @@ public class VoiceManager : MonoBehaviour {
         yield return new WaitWhile(() => scene);
         src.clip = tannerSomebodyHelp;
         src.Play();
+        yield return new WaitWhile(() => src.isPlaying);
+        src.clip = sarosCanYouHearMe;
+        src.Play();
+        yield return new WaitWhile(() => src.isPlaying);
+        src.clip = tannerBrotherTransmission;
+        src.Play();
+        yield return new WaitWhile(() => src.isPlaying);
+        src.clip = sarosMom;
+        src.Play();
+        yield return new WaitWhile(() => src.isPlaying);
+        src.clip = karenTanner;
+        src.Play();
+        yield return new WaitWhile(() => src.isPlaying);
+        src.clip = tannerTransmiting;
+        src.Play();
+        yield return new WaitWhile(() => src.isPlaying);
+        src.clip = karenGetToYou;
+        src.Play();
+        yield return new WaitWhile(() => src.isPlaying);
+        src.clip = arnoldEverythingGoingToBeOk;
+        src.Play();
+        yield return new WaitWhile(() => src.isPlaying);
+        src.clip = tannerGoodEnding;
+        src.Play();
+        yield return new WaitWhile(() => src.isPlaying);
         SceneManager.LoadScene("Credits");
     }
 }

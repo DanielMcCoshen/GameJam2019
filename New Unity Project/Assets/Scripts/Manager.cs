@@ -251,6 +251,7 @@ public class Manager : MonoBehaviour {
     private IEnumerator sendDroneHelper()
     {
         droneOut = true;
+        voices.SendMessage("receiverSequence");
         Drone.GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSeconds(60);
         droneOut = false;

@@ -848,19 +848,33 @@ MonoBehaviour:
   tannerStopPlayback: {fileID: 8300000, guid: d2ee6f4302ee4cd49ae24f21564d6296, type: 3}
   tannerCarbonDIEoxide: {fileID: 8300000, guid: 86ad5e36128e40f468b223029f7ba546,
     type: 3}
-  tannerSomebodyHelp: {fileID: 0}
+  tannerSomebodyHelp: {fileID: 8300000, guid: 38f888feeb8b5b34da996ed447aa4b22, type: 3}
+  tannerBrotherResponse: {fileID: 8300000, guid: 1b643cb0f026d474cbcdf2340acb84af,
+    type: 3}
+  tannerSam: {fileID: 8300000, guid: fde67a0184ce3204b8f86ffd41346625, type: 3}
+  tannerTransmiting: {fileID: 8300000, guid: b34dbcf3172f27c4a9c00f34920a7e52, type: 3}
+  tannerGoodEnding: {fileID: 8300000, guid: e90dc4e278a6de249a89977b2c8e1e18, type: 3}
+  tannerBrotherTransmission: {fileID: 8300000, guid: d8232dd3fb1a21b489957533660e909d,
+    type: 3}
   iDid: {fileID: 8300000, guid: cfdee3d1c54b50e41a0fc364085a3f3d, type: 3}
   theOdds: {fileID: 8300000, guid: 23522d28ac6d4a748a17e58ff09b108c, type: 3}
   solderingIron: {fileID: 8300000, guid: 785db0a2777d2594eb32efd1fdc1234c, type: 3}
   lisaOnBoard: {fileID: 8300000, guid: 0576f9489e62d8a4b8bddbc2343931d3, type: 3}
   lisaRepairTransmitter: {fileID: 8300000, guid: 757000624e9643f44a11636783439566,
     type: 3}
+  lisaStopping: {fileID: 8300000, guid: 7757e74f1d6639b4184dbba00bdd1789, type: 3}
+  lisaCantDoThat: {fileID: 8300000, guid: 3eea801080074db41b4f04569baf55b6, type: 3}
   sarosTransmission: {fileID: 8300000, guid: aa003c302e2e80044872a98f3d4b02cb, type: 3}
+  sarosCanYouHearMe: {fileID: 8300000, guid: e55e98626395a354b8b50624668951fb, type: 3}
+  sarosMom: {fileID: 8300000, guid: e6b8d1a3d176f1748bf0c0013752879e, type: 3}
   karenTransmission: {fileID: 8300000, guid: e55e98626395a354b8b50624668951fb, type: 3}
+  karenTanner: {fileID: 8300000, guid: ee63d535f1c82d8499a0b78629d4ab5e, type: 3}
+  karenGetToYou: {fileID: 8300000, guid: 03661a3ddbe6b404fb74a47425c3d6c0, type: 3}
   arnoldSonOutThere: {fileID: 8300000, guid: 3fcbee095bfba114f9c26a017769f88d, type: 3}
   arnoldEverythingGoingToBeOk: {fileID: 8300000, guid: ee0ec4632b5c3e646a2afdd32a58d6ee,
     type: 3}
   co2Dangerous: {fileID: 8300000, guid: e5d18b17edce2a84ebd92dff25e30a6d, type: 3}
+  samLastLine: {fileID: 8300000, guid: e5acd78c6551c634ab6ae44262ff9d8c, type: 3}
 --- !u!1 &197675297
 GameObject:
   m_ObjectHideFlags: 0
