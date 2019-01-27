@@ -13,7 +13,7 @@ public class TriangulationSystem : MonoBehaviour {
 
     private Vector2 target1 = new Vector2(-85, -83);
     private Vector2 target2 = new Vector2(-244, -121);
-    private Vector2 target3 = new Vector2(-152, -44);
+    private Vector2 target3 = new Vector2(-152, 44);
 
     private bool found1 = false;
     private bool found2 = false;
@@ -29,7 +29,7 @@ public class TriangulationSystem : MonoBehaviour {
                 Mathf.Abs(stars.transform.position.y % 300 - target1.y) < DELTA){
                 if (!found1)
                 {
-
+                    manager.BroadcastMessage("sayCoordanites");
                 }
                 found1 = true;
             }
@@ -38,7 +38,7 @@ public class TriangulationSystem : MonoBehaviour {
             {
                 if (!found2)
                 {
-
+                    manager.BroadcastMessage("sayCoordanites");
                 }
                 found2 = true;
             }
@@ -47,7 +47,7 @@ public class TriangulationSystem : MonoBehaviour {
             {
                 if (!found3)
                 {
-
+                    manager.BroadcastMessage("sayCoordanites");
                 }
                 found3 = true;
             }

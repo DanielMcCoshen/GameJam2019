@@ -253,7 +253,7 @@ public class Manager : MonoBehaviour {
         droneOut = true;
         voices.SendMessage("receiverSequence");
         Drone.GetComponent<SpriteRenderer>().enabled = false;
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(120);
         droneOut = false;
         fixedComms = true;
         Drone.GetComponent<SpriteRenderer>().enabled = true;

@@ -36,6 +36,7 @@ public class VoiceManager : MonoBehaviour {
     public AudioClip lisaRepairTransmitter;
     public AudioClip lisaStopping;
     public AudioClip lisaCantDoThat;
+    public AudioClip coordanites;
 
     [Header("Saros")]
     public AudioClip sarosTransmission;
@@ -63,6 +64,12 @@ public class VoiceManager : MonoBehaviour {
     {
         src = gameObject.GetComponent<AudioSource>();
         firstSequence();
+    }
+
+    public void sayCoordanites()
+    {
+        src.clip = coordanites;
+        src.Play();
     }
 
     public void co2Sequence()

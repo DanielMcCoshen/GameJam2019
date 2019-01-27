@@ -10,6 +10,7 @@ public class Drone : MonoBehaviour {
     private bool isEnabled = true;
 
     public GameObject voice;
+    public Sprite fixedSprite;
 
     public void OnMouseOver()
     {
@@ -46,6 +47,7 @@ public class Drone : MonoBehaviour {
     {
         isRepaired = true;
         manager.SendMessage("droneRepaired");
+        gameObject.GetComponent<SpriteRenderer>().sprite = fixedSprite;
     }
 
     public void enable()

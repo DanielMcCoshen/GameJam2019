@@ -864,6 +864,7 @@ MonoBehaviour:
     type: 3}
   lisaStopping: {fileID: 8300000, guid: 7757e74f1d6639b4184dbba00bdd1789, type: 3}
   lisaCantDoThat: {fileID: 8300000, guid: 3eea801080074db41b4f04569baf55b6, type: 3}
+  coordanites: {fileID: 8300000, guid: c8dce1c296fd5dc42a3164d80eb7c699, type: 3}
   sarosTransmission: {fileID: 8300000, guid: aa003c302e2e80044872a98f3d4b02cb, type: 3}
   sarosCanYouHearMe: {fileID: 8300000, guid: e55e98626395a354b8b50624668951fb, type: 3}
   sarosMom: {fileID: 8300000, guid: e6b8d1a3d176f1748bf0c0013752879e, type: 3}
@@ -2197,7 +2198,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: efa2dc5faaf9a2a458d4c4237a51b322, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 37c244208c42ad44faf6049a09c75c52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2214,7 +2215,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 869828744}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 57.21, y: -14.52, z: -0.1}
+  m_LocalPosition: {x: 58.08, y: -15.01, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1948487042}
@@ -2236,7 +2237,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 12.36, y: 8.9}
+    oldSize: {x: 19.25, y: 8.9}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2511,6 +2512,7 @@ MonoBehaviour:
   circutBoard: {fileID: 1816456595609256, guid: 70ecb58d0fcc5184484226608b720e6c,
     type: 2}
   voice: {fileID: 0}
+  fixedSprite: {fileID: 21300000, guid: b9055480bed755d4080f6d36a28ba55a, type: 3}
 --- !u!1 &881049631
 GameObject:
   m_ObjectHideFlags: 0
